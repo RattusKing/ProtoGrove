@@ -7,44 +7,44 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
   <style>
     body {
-      background-image: url('https://images.unsplash.com/photo-1502784444185-10a1b56a8a04?fit=crop&w=2100&q=80');
-      background-size: cover;
-      background-position: center;
+      background: linear-gradient(to bottom right, #0f172a, #022c22, #000000);
     }
-    .overlay {
-      backdrop-filter: blur(6px);
-      background-color: rgba(0, 0, 0, 0.6);
+    .backdrop {
+      backdrop-filter: blur(8px);
+      background-color: rgba(0, 0, 0, 0.5);
     }
   </style>
 </head>
-<body class="text-white font-sans min-h-screen flex flex-col">
-  <header class="overlay py-6 px-8 shadow-md">
-    <h1 class="text-4xl font-bold tracking-tight">Protogrove AI</h1>
-    <p class="text-sm mt-1 text-gray-300">AI with roots.</p>
+<body class="min-h-screen text-white font-sans">
+  <header class="w-full px-8 py-6 border-b border-emerald-800 backdrop shadow-lg">
+    <div class="max-w-7xl mx-auto flex flex-col">
+      <h1 class="text-4xl font-bold tracking-tight text-emerald-300">Protogrove AI</h1>
+      <p class="text-sm text-gray-400 mt-1">AI with Roots</p>
+    </div>
   </header>
 
-  <main class="flex-grow overlay px-8 py-12">
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">About</h2>
-      <p class="text-gray-300">[This is where you'll describe the vision, origins, and principles of Protogrove AI.]</p>
+  <main class="max-w-6xl mx-auto px-8 py-16 space-y-24">
+    <section class="bg-zinc-900/80 backdrop rounded-2xl p-10 shadow-xl border border-emerald-800">
+      <h2 class="text-3xl font-semibold text-emerald-200 mb-4">About</h2>
+      <p class="text-gray-300 text-lg leading-relaxed">[Content coming soon. This section will describe the foundation, vision, and guiding principles of Protogrove AI.]</p>
     </section>
 
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">Mission</h2>
-      <p class="text-gray-300">[Insert your guiding goals and ethical commitments here. This is where the “AI with roots” philosophy can be explained.]</p>
+    <section class="bg-zinc-900/80 backdrop rounded-2xl p-10 shadow-xl border border-emerald-800">
+      <h2 class="text-3xl font-semibold text-emerald-200 mb-4">Mission</h2>
+      <p class="text-gray-300 text-lg leading-relaxed">[Our mission section will clearly outline our purpose, values, and impact goals in the AI and ethical tech space.]</p>
     </section>
 
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">Projects</h2>
-      <ul class="space-y-3 text-blue-300 underline">
-        <li><a href="#">[Project Name 1]</a></li>
-        <li><a href="#">[Project Name 2]</a></li>
-        <li><a href="#">[Add more links as they come online]</a></li>
+    <section class="bg-zinc-900/80 backdrop rounded-2xl p-10 shadow-xl border border-emerald-800">
+      <h2 class="text-3xl font-semibold text-emerald-200 mb-4">Projects</h2>
+      <ul class="space-y-3 text-lg text-emerald-300 list-disc list-inside">
+        <li><a href="#" class="hover:underline">[Project Alpha Link]</a></li>
+        <li><a href="#" class="hover:underline">[Project Beta Link]</a></li>
+        <li><a href="#" class="hover:underline">[Add more as needed]</a></li>
       </ul>
     </section>
   </main>
 
-  <footer class="overlay py-4 text-center text-gray-400 text-sm">
+  <footer class="px-8 py-6 text-sm text-center text-gray-500 border-t border-emerald-800 backdrop">
     &copy; 2025 Protogrove AI. All rights reserved.
   </footer>
 </body>
