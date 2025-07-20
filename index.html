@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,53 +7,86 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet" />
   <style>
     body {
-      background-color: #071009; /* very dark forest green/black */
+      background: #f9fafb; /* very light gray background */
+      color: #1e293b; /* dark slate text for readability */
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    .panel {
-      background-color: #0f3921; /* dark solid green panel */
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-      border-radius: 1rem;
-      padding: 2rem;
+    .container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    h1, h2 {
+      color: #065f46; /* deep emerald */
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.25rem;
+    }
+    h2 {
+      font-size: 1.875rem;
+      margin-bottom: 1rem;
+    }
+    a {
+      color: #047857; /* emerald */
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #065f46;
+    }
+    section {
+      background: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      padding: 2rem 2.5rem;
       margin-bottom: 3rem;
+    }
+    footer {
+      text-align: center;
+      color: #475569;
+      padding: 2rem 0;
+      font-size: 0.875rem;
     }
   </style>
 </head>
-<body class="min-h-screen text-white font-sans">
-  <header class="w-full bg-[#0b2815] px-10 py-6 shadow-lg">
-    <div class="max-w-7xl mx-auto">
-      <h1 class="text-5xl font-extrabold text-emerald-400 tracking-tight">Protogrove AI</h1>
-      <p class="text-emerald-300 mt-1 text-lg font-light">AI with Roots</p>
-    </div>
+<body>
+  <header class="container text-center">
+    <h1>Protogrove AI</h1>
+    <p style="font-weight: 500; color: #134e4a; font-size: 1.125rem;">AI with Roots</p>
   </header>
 
-  <main class="max-w-5xl mx-auto px-8 py-16">
-    <section class="panel">
-      <h2 class="text-4xl font-semibold text-emerald-300 mb-6">About</h2>
-      <p class="text-emerald-200 text-lg leading-relaxed">
+  <main class="container">
+    <section>
+      <h2>About</h2>
+      <p>
         [Content coming soon. This section will describe the foundation, vision, and guiding principles of Protogrove AI.]
       </p>
     </section>
 
-    <section class="panel">
-      <h2 class="text-4xl font-semibold text-emerald-300 mb-6">Mission</h2>
-      <p class="text-emerald-200 text-lg leading-relaxed">
+    <section>
+      <h2>Mission</h2>
+      <p>
         [Our mission section will clearly outline our purpose, values, and impact goals in the AI and ethical tech space.]
       </p>
     </section>
 
-    <section class="panel">
-      <h2 class="text-4xl font-semibold text-emerald-300 mb-6">Projects</h2>
-      <ul class="list-disc list-inside text-emerald-300 text-lg space-y-3">
-        <li><a href="#" class="hover:text-emerald-100">[Project Alpha Link]</a></li>
-        <li><a href="#" class="hover:text-emerald-100">[Project Beta Link]</a></li>
-        <li><a href="#" class="hover:text-emerald-100">[Add more as needed]</a></li>
+    <section>
+      <h2>Projects</h2>
+      <ul style="list-style: disc inside; color: #065f46; font-weight: 600;">
+        <li><a href="#">[Project Alpha Link]</a></li>
+        <li><a href="#">[Project Beta Link]</a></li>
+        <li><a href="#">[Add more as needed]</a></li>
       </ul>
     </section>
   </main>
 
-  <footer class="bg-[#0b2815] py-6 text-center text-gray-400 text-sm">
+  <footer>
     &copy; 2025 Protogrove AI. All rights reserved.
   </footer>
 </body>
 </html>
-
