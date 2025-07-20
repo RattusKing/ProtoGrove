@@ -2,50 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Protogrove AI</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet" />
   <style>
     body {
-      background: linear-gradient(to bottom right, #0f172a, #022c22, #000000);
+      background-color: #071009; /* very dark forest green/black */
     }
-    .backdrop {
-      backdrop-filter: blur(8px);
-      background-color: rgba(0, 0, 0, 0.5);
+    .panel {
+      background-color: #0f3921; /* dark solid green panel */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 3rem;
     }
   </style>
 </head>
 <body class="min-h-screen text-white font-sans">
-  <header class="w-full px-8 py-6 border-b border-emerald-800 backdrop shadow-lg">
-    <div class="max-w-7xl mx-auto flex flex-col">
-      <h1 class="text-4xl font-bold tracking-tight text-emerald-300">Protogrove AI</h1>
-      <p class="text-sm text-gray-400 mt-1">AI with Roots</p>
+  <header class="w-full bg-[#0b2815] px-10 py-6 shadow-lg">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-5xl font-extrabold text-emerald-400 tracking-tight">Protogrove AI</h1>
+      <p class="text-emerald-300 mt-1 text-lg font-light">AI with Roots</p>
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-8 py-16 space-y-24">
-    <section class="bg-zinc-900/80 backdrop rounded-2xl p-10 shadow-xl border border-emerald-800">
-      <h2 class="text-3xl font-semibold text-emerald-200 mb-4">About</h2>
-      <p class="text-gray-300 text-lg leading-relaxed">[Content coming soon. This section will describe the foundation, vision, and guiding principles of Protogrove AI.]</p>
+  <main class="max-w-5xl mx-auto px-8 py-16">
+    <section class="panel">
+      <h2 class="text-4xl font-semibold text-emerald-300 mb-6">About</h2>
+      <p class="text-emerald-200 text-lg leading-relaxed">
+        [Content coming soon. This section will describe the foundation, vision, and guiding principles of Protogrove AI.]
+      </p>
     </section>
 
-    <section class="bg-zinc-900/80 backdrop rounded-2xl p-10 shadow-xl border border-emerald-800">
-      <h2 class="text-3xl font-semibold text-emerald-200 mb-4">Mission</h2>
-      <p class="text-gray-300 text-lg leading-relaxed">[Our mission section will clearly outline our purpose, values, and impact goals in the AI and ethical tech space.]</p>
+    <section class="panel">
+      <h2 class="text-4xl font-semibold text-emerald-300 mb-6">Mission</h2>
+      <p class="text-emerald-200 text-lg leading-relaxed">
+        [Our mission section will clearly outline our purpose, values, and impact goals in the AI and ethical tech space.]
+      </p>
     </section>
 
-    <section class="bg-zinc-900/80 backdrop rounded-2xl p-10 shadow-xl border border-emerald-800">
-      <h2 class="text-3xl font-semibold text-emerald-200 mb-4">Projects</h2>
-      <ul class="space-y-3 text-lg text-emerald-300 list-disc list-inside">
-        <li><a href="#" class="hover:underline">[Project Alpha Link]</a></li>
-        <li><a href="#" class="hover:underline">[Project Beta Link]</a></li>
-        <li><a href="#" class="hover:underline">[Add more as needed]</a></li>
+    <section class="panel">
+      <h2 class="text-4xl font-semibold text-emerald-300 mb-6">Projects</h2>
+      <ul class="list-disc list-inside text-emerald-300 text-lg space-y-3">
+        <li><a href="#" class="hover:text-emerald-100">[Project Alpha Link]</a></li>
+        <li><a href="#" class="hover:text-emerald-100">[Project Beta Link]</a></li>
+        <li><a href="#" class="hover:text-emerald-100">[Add more as needed]</a></li>
       </ul>
     </section>
   </main>
 
-  <footer class="px-8 py-6 text-sm text-center text-gray-500 border-t border-emerald-800 backdrop">
+  <footer class="bg-[#0b2815] py-6 text-center text-gray-400 text-sm">
     &copy; 2025 Protogrove AI. All rights reserved.
   </footer>
 </body>
 </html>
+
