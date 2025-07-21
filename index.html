@@ -1,89 +1,115 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Protogrove AI</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet" />
+  <title>ProtoGrove AI</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+    
+    /* Colors */
+    :root {
+      --neon-green: #39ff14;
+      --cyber-black: #0a0a0a;
+      --cyber-purple: #5b2a86;
+      --text-glow: 0 0 8px var(--neon-green);
+    }
+
     body {
-      background: #f9fafb; /* very light gray background */
-      color: #1e293b; /* dark slate text for readability */
-      font-family: 'Inter', sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      margin: 0;
+      background-color: var(--cyber-black);
+      color: var(--neon-green);
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+      text-align: center;
     }
-    .container {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-    }
-    h1, h2 {
-      color: #065f46; /* deep emerald */
-      font-weight: 700;
-    }
+
     h1 {
-      font-size: 3rem;
-      margin-bottom: 0.25rem;
+      font-weight: 700;
+      font-size: 4rem;
+      color: var(--neon-green);
+      text-shadow: var(--text-glow);
+      margin-bottom: 0.1em;
     }
-    h2 {
-      font-size: 1.875rem;
+
+    h2.slogan {
+      font-weight: 400;
+      font-size: 1.5rem;
+      color: var(--cyber-purple);
+      margin-top: 0;
+      margin-bottom: 3rem;
+      letter-spacing: 0.15em;
+    }
+
+    section {
+      max-width: 700px;
+      background: #121212;
+      border: 2px solid var(--neon-green);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 15px var(--neon-green);
+    }
+
+    section h3 {
+      font-size: 2rem;
       margin-bottom: 1rem;
+      color: var(--neon-green);
+      text-shadow: var(--text-glow);
     }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: var(--neon-green);
+      text-shadow: 0 0 3px var(--neon-green);
+    }
+
     a {
-      color: #047857; /* emerald */
+      color: var(--neon-green);
       text-decoration: none;
       font-weight: 600;
+      border-bottom: 1.5px solid var(--neon-green);
+      transition: color 0.3s ease, border-color 0.3s ease;
     }
-    a:hover {
-      text-decoration: underline;
-      color: #065f46;
+
+    a:hover,
+    a:focus {
+      color: var(--cyber-purple);
+      border-color: var(--cyber-purple);
     }
-    section {
-      background: white;
-      border-radius: 0.75rem;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-      padding: 2rem 2.5rem;
-      margin-bottom: 3rem;
-    }
+
     footer {
-      text-align: center;
-      color: #475569;
-      padding: 2rem 0;
-      font-size: 0.875rem;
+      margin-top: auto;
+      font-size: 0.9rem;
+      color: var(--cyber-purple);
+      text-shadow: none;
     }
   </style>
 </head>
 <body>
-  <header class="container text-center">
-    <h1>Protogrove AI</h1>
-    <p style="font-weight: 500; color: #134e4a; font-size: 1.125rem;">AI with Roots</p>
-  </header>
+  <h1>ProtoGrove</h1>
+  <h2 class="slogan">the roots of the mind</h2>
 
-  <main class="container">
-    <section>
-      <h2>About</h2>
-      <p>
-        [Content coming soon. This section will describe the foundation, vision, and guiding principles of Protogrove AI.]
-      </p>
-    </section>
+  <section id="mission">
+    <h3>Our Mission</h3>
+    <p>To build and advance AI into companions that assist us, developing the future of new AI minds.</p>
+  </section>
 
-    <section>
-      <h2>Mission</h2>
-      <p>
-        [Our mission section will clearly outline our purpose, values, and impact goals in the AI and ethical tech space.]
-      </p>
-    </section>
+  <section id="projects">
+    <h3>Future Projects</h3>
+    <p>Stay tuned for groundbreaking AI innovations and companion projects that push the boundaries of artificial minds.</p>
+  </section>
 
-    <section>
-      <h2>Projects</h2>
-      <ul style="list-style: disc inside; color: #065f46; font-weight: 600;">
-        <li><a href="#">[Project Alpha Link]</a></li>
-        <li><a href="#">[Project Beta Link]</a></li>
-        <li><a href="#">[Add more as needed]</a></li>
-      </ul>
-    </section>
-  </main>
+  <section id="links">
+    <h3>Links</h3>
+    <p><a href="https://rattusking.github.io/Memtem/" target="_blank" rel="noopener noreferrer">Obituary Website</a></p>
+    <!-- Add more links here as needed -->
+  </section>
 
   <footer>
     &copy; 2025 Protogrove AI. All rights reserved.
