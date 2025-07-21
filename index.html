@@ -6,108 +6,156 @@
   <title>ProtoGrove AI</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
-    
-    /* Colors */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+    /* Color Palette */
     :root {
       --neon-green: #39ff14;
+      --neon-green-bright: #76ff42;
       --cyber-black: #0a0a0a;
-      --cyber-purple: #5b2a86;
-      --text-glow: 0 0 8px var(--neon-green);
+      --cyber-purple: #6e3aff;
+      --cyber-purple-dark: #3a198f;
+      --text-shadow-neon: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green-bright);
+      --text-shadow-purple: 0 0 10px var(--cyber-purple), 0 0 20px var(--cyber-purple-dark);
     }
 
+    /* Reset & Base */
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      background-color: var(--cyber-black);
+      background: linear-gradient(135deg, #0a0a0a 40%, #120622 100%);
       color: var(--neon-green);
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Roboto Mono', monospace;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      padding: 2rem;
+      padding: 3rem 2rem;
       text-align: center;
+      user-select: none;
     }
 
+    /* Header */
     h1 {
+      font-family: 'Orbitron', sans-serif;
       font-weight: 700;
-      font-size: 4rem;
-      color: var(--neon-green);
-      text-shadow: var(--text-glow);
-      margin-bottom: 0.1em;
+      font-size: 5rem;
+      color: var(--neon-green-bright);
+      letter-spacing: 0.15em;
+      text-shadow: var(--text-shadow-neon);
+      margin: 0 0 0.1em 0;
+      user-select: text;
     }
 
     h2.slogan {
-      font-weight: 400;
-      font-size: 1.5rem;
-      color: var(--cyber-purple);
-      margin-top: 0;
-      margin-bottom: 3rem;
-      letter-spacing: 0.15em;
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--neon-green-bright);
+      text-shadow: var(--text-shadow-neon);
+      margin: 0 0 3rem 0;
+      letter-spacing: 0.25em;
+      font-family: 'Roboto Mono', monospace;
+      user-select: text;
+      text-transform: uppercase;
     }
 
+    /* Section style */
     section {
-      max-width: 700px;
-      background: #121212;
-      border: 2px solid var(--neon-green);
+      max-width: 720px;
+      background: #121018dd;
+      border: 2px solid var(--neon-green-bright);
       border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 0 15px var(--neon-green);
+      padding: 2.5rem 3rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 0 30px var(--neon-green-bright);
+      backdrop-filter: saturate(180%) blur(12px);
+      user-select: text;
+      transition: border-color 0.3s ease;
+    }
+    section:hover {
+      border-color: var(--cyber-purple);
+      box-shadow: 0 0 40px var(--cyber-purple);
     }
 
     section h3 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: var(--neon-green);
-      text-shadow: var(--text-glow);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.2rem;
+      margin-bottom: 1.2rem;
+      color: var(--neon-green-bright);
+      text-shadow: var(--text-shadow-neon);
     }
 
     p {
-      font-size: 1.2rem;
-      line-height: 1.5;
+      font-size: 1.25rem;
+      line-height: 1.6;
       color: var(--neon-green);
-      text-shadow: 0 0 3px var(--neon-green);
+      text-shadow: 0 0 5px var(--neon-green);
     }
 
     a {
-      color: var(--neon-green);
+      color: var(--neon-green-bright);
       text-decoration: none;
-      font-weight: 600;
-      border-bottom: 1.5px solid var(--neon-green);
+      font-weight: 700;
+      border-bottom: 2px solid var(--neon-green-bright);
+      padding-bottom: 2px;
       transition: color 0.3s ease, border-color 0.3s ease;
     }
-
     a:hover,
     a:focus {
       color: var(--cyber-purple);
       border-color: var(--cyber-purple);
+      outline: none;
     }
 
+    /* Footer */
     footer {
       margin-top: auto;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--cyber-purple);
       text-shadow: none;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 3rem;
+      }
+      h2.slogan {
+        font-size: 1.2rem;
+      }
+      section {
+        padding: 2rem 1.5rem;
+        margin-bottom: 2rem;
+      }
     }
   </style>
 </head>
 <body>
   <h1>ProtoGrove</h1>
-  <h2 class="slogan">the roots of the mind</h2>
+  <h2 class="slogan">THE ROOTS OF THE MIND</h2>
 
   <section id="mission">
     <h3>Our Mission</h3>
-    <p>To build and advance AI into companions that assist us, developing the future of new AI minds.</p>
+    <p>
+      To build and advance AI into companions that assist us, developing the future of new AI minds.
+    </p>
   </section>
 
   <section id="projects">
     <h3>Future Projects</h3>
-    <p>Stay tuned for groundbreaking AI innovations and companion projects that push the boundaries of artificial minds.</p>
+    <p>
+      Stay tuned for groundbreaking AI innovations and companion projects pushing the boundaries of artificial minds and digital companionship.
+    </p>
   </section>
 
   <section id="links">
     <h3>Links</h3>
-    <p><a href="https://rattusking.github.io/Memtem/" target="_blank" rel="noopener noreferrer">Obituary Website</a></p>
+    <p>
+      <a href="https://rattusking.github.io/Memtem/" target="_blank" rel="noopener noreferrer">Obituary Website</a>
+    </p>
     <!-- Add more links here as needed -->
   </section>
 
