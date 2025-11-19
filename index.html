@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ProtoGrove  — Building innovative AI for the future of health and fitness." />
+  <meta name="description" content="ProtoGrove — Building innovative AI solutions for learning, growth, and research." />
   <meta name="keywords" content="AI, artificial intelligence, ProtoGrove, innovation, technology" />
   <meta name="author" content="ProtoGrove Team" />
   <meta name="robots" content="index, follow" />
@@ -59,8 +59,9 @@
   nav .logo {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
+    font-weight: 700;
     color: var(--sky-teal-base);
-    
+    letter-spacing: 0.05em;
   }
   nav ul {
     display: flex;
@@ -127,8 +128,21 @@
   }
   p {
     font-size: 1.1rem;
-    line-height: 1.6;
+    line-height: 1.7;
     color: #d0d0d0;
+  }
+  p strong {
+    color: var(--sky-teal-light);
+    font-weight: 600;
+  }
+  section a:not(.cta-button) {
+    color: var(--sky-teal-base);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.3s ease;
+  }
+  section a:not(.cta-button):hover {
+    color: var(--orange-base);
   }
 
   /* CTA Button */
@@ -152,36 +166,62 @@
   }
 
   /* Contact Form */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .contact-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--sky-teal-light);
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+  }
   .contact-form input,
   .contact-form textarea {
-    padding: 0.8rem;
-    border: 1px solid var(--sky-teal-base);
+    padding: 0.9rem 1rem;
+    border: 2px solid var(--sky-teal-base);
     border-radius: 8px;
-    background: #1c1c27;
+    background: rgba(28, 28, 39, 0.8);
     color: #e0e0e0;
     font-size: 1rem;
+    font-family: 'Inter', sans-serif;
     outline: none;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    width: 100%;
   }
   .contact-form input:focus,
   .contact-form textarea:focus {
     border-color: var(--orange-base);
-    box-shadow: 0 0 8px var(--orange-base);
+    box-shadow: 0 0 12px rgba(255, 122, 26, 0.4);
+    background: rgba(28, 28, 39, 1);
+  }
+  .contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
   }
   .contact-form button {
     background: var(--sky-teal-base);
     color: #000;
     border: none;
-    padding: 0.8rem;
+    padding: 1rem 2rem;
     border-radius: 8px;
     font-weight: 700;
+    font-size: 1.05rem;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    align-self: flex-start;
   }
   .contact-form button:hover,
   .contact-form button:focus {
     background: var(--orange-base);
     color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(255, 122, 26, 0.4);
     outline: none;
   }
 
@@ -215,15 +255,36 @@
     @media (max-width: 768px) {
       h1 { font-size: 2.5rem; }
       h2.slogan { font-size: 1.2rem; }
-      nav { flex-direction: column; gap: 1rem; }
-      nav ul { flex-direction: column; align-items: center; }
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
       section { padding: 2rem; }
+      .contact-form button {
+        align-self: stretch;
+        width: 100%;
+      }
     }
     @media (max-width: 480px) {
       h1 { font-size: 2rem; }
       h2.slogan { font-size: 1rem; }
       section { padding: 1.5rem; }
-      .contact-form input, .contact-form textarea { font-size: 0.95rem; }
+      section h3 { font-size: 1.6rem; }
+      .contact-form input,
+      .contact-form textarea {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+      }
+      .cta-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
@@ -245,7 +306,7 @@
     <section id="mission">
       <h3>Our Mission</h3>
       <p>
-        At ProtoGrove, we work everyday to bring a brighter future for everyone. 
+        At ProtoGrove, we work every day to bring a brighter future for everyone through innovative AI solutions that empower learning, growth, and discovery.
       </p>
       <a href="#contact" class="cta-button">Learn More</a>
     </section>
@@ -253,20 +314,20 @@
     <section id="projects">
       <h3>Our Projects</h3>
       <p>
-        We’re developing groundbreaking ai solutions to help us all learn and grow, we offer a wide range of options for many subjects and we are always expanding. 
-         Here, Ella is our first product.
-         <p>
-        | <a href="https://rattusking.github.io/Ella-AI-/" target="_blank" rel="noopener noreferrer">Ella AI</a>
+        We're developing groundbreaking AI solutions to help us all learn and grow. We offer a wide range of options across many subjects and we are always expanding our capabilities.
+      </p>
+      <p style="margin-top: 1.5rem;">
+        <strong>Ella AI</strong> — Our flagship product designed to enhance learning and provide intelligent assistance.<br>
+        <a href="https://rattusking.github.io/Ella-AI-/" target="_blank" rel="noopener noreferrer" class="cta-button" style="margin-top: 0.8rem;">Explore Ella AI</a>
       </p>
     </section>
-    
-      
-      
-      <section id="services">
+
+    <section id="services">
       <h3>Services</h3>
       <p>
-        We offer top of the line research bots to assist in many ways. Connect with us and we can curate one for any specific need. 
+        We offer top-of-the-line research bots to assist in many ways. Connect with us and we can curate a custom solution for any specific need.
       </p>
+      <a href="#contact" class="cta-button">Get Started</a>
     </section>
 
     <section id="contact">
@@ -274,24 +335,22 @@
       <p>
         Got questions or want to discuss solutions for your business? Reach out below to join our journey in shaping the future.
       </p>
-       <section class="contact-form">
-  <h2>Contact Us</h2>
-  <form action="https://formspree.io/f/xandyenb" method="POST">
-    <label>
-      Your email:
-      <input type="email" name="_replyto" placeholder="Your email" required>
-    </label>
-    <label>
-      Your message:
-      <textarea name="message" placeholder="Your message" required></textarea>
-    </label>
-    <!-- Set a custom subject for emails -->
-    <input type="hidden" name="_subject" value="New Contact Form Submission from Protogrove">
-    <!-- Honeypot for spam protection -->
-    <input type="text" name="_gotcha" style="display:none">
-    <button type="submit">Send</button>
-  </form>
-</section>
+      <form class="contact-form" action="https://formspree.io/f/xandyenb" method="POST">
+        <label for="email">
+          Your Email
+          <input type="email" id="email" name="_replyto" placeholder="your.email@example.com" required>
+        </label>
+        <label for="message">
+          Your Message
+          <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..." rows="6" required></textarea>
+        </label>
+        <!-- Set a custom subject for emails -->
+        <input type="hidden" name="_subject" value="New Contact Form Submission from ProtoGrove">
+        <!-- Honeypot for spam protection -->
+        <input type="text" name="_gotcha" style="display:none" aria-hidden="true">
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
   </main>
 
   <footer>
