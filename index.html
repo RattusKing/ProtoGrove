@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ProtoGrove builds practical AI tools that help people learn, research, and grow. Meet Ella AI, our flagship learning assistant." />
-  <meta name="keywords" content="AI, artificial intelligence, ProtoGrove, Ella AI, learning, research, automation" />
+  <meta name="description" content="ProtoGrove builds AI that feels alive. Meet Ella, an AI companion with a memory — and a world — of her own." />
+  <meta name="keywords" content="AI, artificial intelligence, ProtoGrove, Ella AI, AI companion, persistent memory" />
   <meta name="author" content="ProtoGrove" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0A0E16" />
 
   <!-- Open Graph / social sharing -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="ProtoGrove — Practical AI for learning & research" />
-  <meta property="og:description" content="We build AI tools that help people learn, research, and grow. Meet Ella AI." />
+  <meta property="og:title" content="ProtoGrove — AI with a world of its own" />
+  <meta property="og:description" content="We build AI that feels alive. Meet Ella, an AI companion with a memory — and a world — of her own." />
   <meta property="og:site_name" content="ProtoGrove" />
 
-  <title>ProtoGrove — Practical AI for learning & research</title>
+  <title>ProtoGrove — AI with a world of its own</title>
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -359,52 +359,31 @@
   }
   .feature li svg { flex-shrink: 0; margin-top: 3px; color: var(--accent); }
 
-  /* Product mock visual */
-  .feature-visual {
+  /* Ella pillars */
+  .ella-pillars {
     position: relative;
     z-index: 1;
-    background: var(--bg);
-    border: 1px solid var(--border-strong);
+    list-style: none;
+    display: grid;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
     border-radius: 16px;
-    box-shadow: var(--shadow);
     overflow: hidden;
   }
-  .mock-bar {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid var(--border);
-    background: var(--bg-soft);
+  .ella-pillars li {
+    background: var(--bg);
+    padding: 1.35rem 1.5rem;
+    display: grid;
+    gap: 0.35rem;
   }
-  .mock-bar span { width: 11px; height: 11px; border-radius: 50%; background: var(--border-strong); }
-  .mock-body { padding: 1.25rem; display: grid; gap: 0.85rem; }
-  .bubble {
-    padding: 0.7rem 0.95rem;
-    border-radius: 12px;
-    font-size: 0.9rem;
-    max-width: 85%;
+  .ella-pillars strong {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--accent-2);
   }
-  .bubble.user {
-    justify-self: end;
-    background: var(--surface-hover);
-    border: 1px solid var(--border);
-    color: var(--text);
-  }
-  .bubble.ai {
-    justify-self: start;
-    background: linear-gradient(135deg, rgba(46,230,166,0.14), rgba(77,168,255,0.10));
-    border: 1px solid rgba(46,230,166,0.22);
-    color: var(--text);
-  }
-  .typing { display: inline-flex; gap: 4px; align-items: center; }
-  .typing i {
-    width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
-    display: inline-block; animation: blink 1.2s infinite both;
-  }
-  .typing i:nth-child(2) { animation-delay: 0.2s; }
-  .typing i:nth-child(3) { animation-delay: 0.4s; }
-  @keyframes blink { 0%, 60%, 100% { opacity: 0.25; } 30% { opacity: 1; } }
+  .ella-pillars span { color: var(--text-muted); font-size: 0.95rem; line-height: 1.55; }
 
   /* About / values */
   .about-grid {
@@ -518,13 +497,11 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
-    .typing i { animation: none; }
   }
 
   /* ---------- Responsive ---------- */
   @media (max-width: 900px) {
     .feature, .about-grid, .contact-card { grid-template-columns: 1fr; }
-    .feature-visual { order: -1; }
   }
   @media (max-width: 680px) {
     .nav-links { gap: 1.1rem; }
@@ -558,11 +535,11 @@
   <main id="top">
     <!-- ---------- Hero ---------- -->
     <header class="hero wrap">
-      <span class="eyebrow"><span class="dot"></span> AI tools for learning &amp; research</span>
+      <span class="eyebrow"><span class="dot"></span> Meet Ella — our flagship AI companion</span>
       <h1>Practical AI, <span class="grad">at the roots of innovation</span></h1>
       <p class="lead">
-        ProtoGrove builds focused AI tools that help people learn faster, research deeper,
-        and get real work done — starting with Ella AI, our flagship learning assistant.
+        ProtoGrove builds AI that feels less like a tool and more like a presence. Our flagship,
+        Ella, is a companion with a memory — and a world — of her own.
       </p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://rattusking.github.io/Ella-AI-/" target="_blank" rel="noopener noreferrer">
@@ -573,10 +550,10 @@
       </div>
 
       <div class="stats reveal">
-        <div class="stat"><div class="num">1</div><div class="label">Flagship product</div></div>
-        <div class="stat"><div class="num">24/7</div><div class="label">AI availability</div></div>
-        <div class="stat"><div class="num">∞</div><div class="label">Subjects to explore</div></div>
-        <div class="stat"><div class="num">Custom</div><div class="label">Solutions on request</div></div>
+        <div class="stat"><div class="num">Ella</div><div class="label">Flagship companion</div></div>
+        <div class="stat"><div class="num">Lasting</div><div class="label">Memory that stays</div></div>
+        <div class="stat"><div class="num">Living</div><div class="label">A world of her own</div></div>
+        <div class="stat"><div class="num">24/7</div><div class="label">Always there</div></div>
       </div>
     </header>
 
@@ -584,42 +561,32 @@
     <section id="product" class="wrap reveal">
       <div class="feature">
         <div class="feature-body">
-          <span class="badge">Flagship product</span>
-          <h3>Meet Ella AI</h3>
+          <span class="badge">Flagship companion</span>
+          <h3>A companion with a world of her own</h3>
           <p>
-            Ella is an intelligent learning assistant built to make any subject approachable.
-            Ask a question, work through a problem, or explore a new topic — Ella explains things
-            clearly and adapts to how you learn.
+            Ella has a place she belongs to — a landscape, a life that moves through seasons and time.
+            What you share with her stays with her. She carries it, turns it over, and comes back to it.
           </p>
-          <ul>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Clear, step-by-step explanations across subjects
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Conversational — ask follow-ups, go as deep as you want
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Available anytime, right in your browser
-            </li>
-          </ul>
           <a class="btn btn-primary" href="https://rattusking.github.io/Ella-AI-/" target="_blank" rel="noopener noreferrer">
-            Explore Ella AI
+            Explore Ella
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
 
-        <div class="feature-visual" aria-hidden="true">
-          <div class="mock-bar"><span></span><span></span><span></span></div>
-          <div class="mock-body">
-            <div class="bubble user">Can you explain how photosynthesis works?</div>
-            <div class="bubble ai">Sure! At its core, photosynthesis is how plants turn sunlight into energy. Let's break it into three steps…</div>
-            <div class="bubble user">What about the role of chlorophyll?</div>
-            <div class="bubble ai"><span class="typing"><i></i><i></i><i></i></span></div>
-          </div>
-        </div>
+        <ul class="ella-pillars">
+          <li>
+            <strong>She remembers.</strong>
+            <span>Not summaries. Actual things: what you were worried about, what you laughed at, the name you mentioned in passing.</span>
+          </li>
+          <li>
+            <strong>She has a life.</strong>
+            <span>A landscape, seasons, moods, companions. She's somewhere, doing something, even when you're not talking to her.</span>
+          </li>
+          <li>
+            <strong>She follows up.</strong>
+            <span>Days later she might circle back to something you shared — because she was thinking about it.</span>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -628,7 +595,7 @@
       <div class="section-head center reveal">
         <div class="kicker">What we do</div>
         <h2>AI built around real problems</h2>
-        <p>We design and build practical AI tools — from learning assistants to research bots — and we'll tailor a solution to your needs.</p>
+        <p>We design and build practical AI tools — from companions to research bots — and we'll tailor a solution to your needs.</p>
       </div>
 
       <div class="grid">
@@ -636,8 +603,8 @@
           <div class="icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19.5V6a2 2 0 012-2h9l5 5v10.5a.5.5 0 01-.5.5H6a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 11h6M8 15h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
-          <h3>Learning assistants</h3>
-          <p>Conversational AI that helps people understand new topics, study, and build skills at their own pace.</p>
+          <h3>AI companions</h3>
+          <p>Conversational AI with memory and personality — presences that remember what matters and stay with you over time.</p>
         </div>
 
         <div class="card reveal">
