@@ -88,6 +88,14 @@
 
   a { color: inherit; }
 
+  ::selection { background: rgba(46, 230, 166, 0.28); color: #fff; }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
   .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
 
   /* ---------- Navigation ---------- */
@@ -98,6 +106,12 @@
     backdrop-filter: blur(12px);
     background: rgba(10, 14, 22, 0.72);
     border-bottom: 1px solid var(--border);
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  nav.scrolled {
+    background: rgba(10, 14, 22, 0.9);
+    border-bottom-color: var(--border-strong);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
   }
   .nav-inner {
     max-width: var(--maxw);
@@ -171,12 +185,23 @@
     border-color: var(--border-strong);
   }
   .btn-ghost:hover { background: var(--surface-hover); transform: translateY(-2px); }
+  .btn:active { transform: translateY(0) scale(0.985); }
 
   /* ---------- Hero ---------- */
   header.hero {
     text-align: center;
     padding: 6rem 0 4.5rem;
   }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: none; }
+  }
+  .hero > * { animation: fadeUp 0.7s ease both; }
+  .hero .eyebrow  { animation-delay: 0.05s; }
+  .hero h1        { animation-delay: 0.15s; }
+  .hero p.lead    { animation-delay: 0.28s; }
+  .hero-actions   { animation-delay: 0.40s; }
+  .hero .stats    { animation-delay: 0.52s; }
   .eyebrow {
     display: inline-flex;
     align-items: center;
@@ -283,7 +308,10 @@
     transform: translateY(-4px);
     border-color: var(--border-strong);
     background: var(--surface-hover);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
   }
+  .grid .card:nth-child(2) { transition-delay: 0.08s; }
+  .grid .card:nth-child(3) { transition-delay: 0.16s; }
   .card .icon {
     width: 44px; height: 44px;
     display: grid; place-items: center;
@@ -376,7 +404,9 @@
     padding: 1.35rem 1.5rem;
     display: grid;
     gap: 0.35rem;
+    transition: background 0.2s ease;
   }
+  .ella-pillars li:hover { background: var(--bg-soft); }
   .ella-pillars strong {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.05rem;
@@ -497,6 +527,7 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
+    .hero > * { animation: none; }
   }
 
   /* ---------- Responsive ---------- */
@@ -504,8 +535,8 @@
     .feature, .about-grid, .contact-card { grid-template-columns: 1fr; }
   }
   @media (max-width: 680px) {
-    .nav-links { gap: 1.1rem; }
-    .nav-links a:not(.nav-cta) { display: none; }
+    .nav-inner { flex-direction: column; gap: 0.75rem; }
+    .nav-links { gap: 1.25rem; flex-wrap: wrap; justify-content: center; }
     header.hero { padding: 4rem 0 3rem; }
     .feature, .contact-card { padding: 1.75rem; }
     .stats { gap: 1.75rem 2.5rem; }
@@ -549,7 +580,7 @@
         <a class="btn btn-ghost" href="#contact">Talk to us</a>
       </div>
 
-      <div class="stats reveal">
+      <div class="stats">
         <div class="stat"><div class="num">Ella</div><div class="label">Flagship companion</div></div>
         <div class="stat"><div class="num">Lasting</div><div class="label">Memory that stays</div></div>
         <div class="stat"><div class="num">Living</div><div class="label">A world of her own</div></div>
@@ -742,6 +773,17 @@
         });
       }, { threshold: 0.12 });
       els.forEach(function (el) { io.observe(el); });
+    })();
+
+    // Nav shadow once scrolled
+    (function () {
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      var onScroll = function () {
+        nav.classList.toggle('scrolled', window.scrollY > 8);
+      };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
     })();
   </script>
 </body>
