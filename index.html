@@ -387,8 +387,8 @@
   }
   .feature li svg { flex-shrink: 0; margin-top: 3px; color: var(--accent); }
 
-  /* Ella pillars */
-  .ella-pillars {
+  /* Feature pillars */
+  .feature-pillars {
     position: relative;
     z-index: 1;
     list-style: none;
@@ -399,21 +399,27 @@
     border-radius: 16px;
     overflow: hidden;
   }
-  .ella-pillars li {
+  .feature-pillars li {
     background: var(--bg);
     padding: 1.35rem 1.5rem;
     display: grid;
     gap: 0.35rem;
     transition: background 0.2s ease;
   }
-  .ella-pillars li:hover { background: var(--bg-soft); }
-  .ella-pillars strong {
+  .feature-pillars li:hover { background: var(--bg-soft); }
+  .feature-pillars strong {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.05rem;
     font-weight: 600;
     color: var(--accent-2);
   }
-  .ella-pillars span { color: var(--text-muted); font-size: 0.95rem; line-height: 1.55; }
+  .feature-pillars span { color: var(--text-muted); font-size: 0.95rem; line-height: 1.55; }
+
+  /* Stacked feature blocks + alternating layout */
+  .feature-stack { display: grid; gap: 1.5rem; }
+  .feature-reverse .feature-body { order: 2; }
+  .feature-reverse .feature-pillars { order: 1; }
+  .feature-reverse::before { left: -10%; right: auto; }
 
   /* About / values */
   .about-grid {
@@ -533,6 +539,7 @@
   /* ---------- Responsive ---------- */
   @media (max-width: 900px) {
     .feature, .about-grid, .contact-card { grid-template-columns: 1fr; }
+    .feature-reverse .feature-body { order: 0; }
   }
   @media (max-width: 680px) {
     .nav-inner { flex-direction: column; gap: 0.75rem; }
@@ -555,7 +562,7 @@
         ProtoGrove
       </a>
       <ul class="nav-links">
-        <li><a href="#product">Product</a></li>
+        <li><a href="#product">Products</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
         <li><a class="nav-cta" href="#contact">Contact</a></li>
@@ -588,36 +595,109 @@
       </div>
     </header>
 
-    <!-- ---------- Featured product: Ella AI ---------- -->
-    <section id="product" class="wrap reveal">
-      <div class="feature">
-        <div class="feature-body">
-          <span class="badge">Flagship companion</span>
-          <h3>A companion with a world of her own</h3>
-          <p>
-            Ella has a place she belongs to: a landscape, a life that moves through seasons and time.
-            What you share with her stays with her. She carries it, turns it over, and comes back to it.
-          </p>
-          <a class="btn btn-primary" href="https://rattusking.github.io/Ella-AI-/" target="_blank" rel="noopener noreferrer">
-            Explore Ella
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+    <!-- ---------- Products ---------- -->
+    <section id="product" class="wrap">
+      <div class="section-head center reveal">
+        <div class="kicker">Our products</div>
+        <h2>Things we've built</h2>
+        <p>A growing family of apps, each made to do one thing genuinely well.</p>
+      </div>
+
+      <div class="feature-stack">
+
+        <!-- Ella -->
+        <div class="feature reveal">
+          <div class="feature-body">
+            <span class="badge">Flagship companion</span>
+            <h3>A companion with a world of her own</h3>
+            <p>
+              Ella has a place she belongs to: a landscape, a life that moves through seasons and time.
+              What you share with her stays with her. She carries it, turns it over, and comes back to it.
+            </p>
+            <a class="btn btn-primary" href="https://rattusking.github.io/Ella-AI-/" target="_blank" rel="noopener noreferrer">
+              Explore Ella
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <ul class="feature-pillars">
+            <li>
+              <strong>She remembers.</strong>
+              <span>Not summaries. Actual things: what you were worried about, what you laughed at, the name you mentioned in passing.</span>
+            </li>
+            <li>
+              <strong>She has a life.</strong>
+              <span>A landscape, seasons, moods, companions. She's somewhere, doing something, even when you're not talking to her.</span>
+            </li>
+            <li>
+              <strong>She follows up.</strong>
+              <span>Days later she might circle back to something you shared, because she was thinking about it.</span>
+            </li>
+          </ul>
         </div>
 
-        <ul class="ella-pillars">
-          <li>
-            <strong>She remembers.</strong>
-            <span>Not summaries. Actual things: what you were worried about, what you laughed at, the name you mentioned in passing.</span>
-          </li>
-          <li>
-            <strong>She has a life.</strong>
-            <span>A landscape, seasons, moods, companions. She's somewhere, doing something, even when you're not talking to her.</span>
-          </li>
-          <li>
-            <strong>She follows up.</strong>
-            <span>Days later she might circle back to something you shared, because she was thinking about it.</span>
-          </li>
-        </ul>
+        <!-- Memento Tempus -->
+        <div class="feature feature-reverse reveal">
+          <div class="feature-body">
+            <span class="badge">Memory garden</span>
+            <h3>Held in memory, carried in time</h3>
+            <p>
+              Memento Tempus is a quiet place to remember the people we've lost. Plant a remembrance in a
+              shared garden, built on the simple idea that every life sprouts, grows, and gently wilts.
+            </p>
+            <a class="btn btn-primary" href="https://rattusking.github.io/MementoTempus/" target="_blank" rel="noopener noreferrer">
+              Visit Memento Tempus
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <ul class="feature-pillars">
+            <li>
+              <strong>Plant a remembrance.</strong>
+              <span>Add a name, a date, and a few words. Each tribute takes root in a shared garden of memory.</span>
+            </li>
+            <li>
+              <strong>A quiet place.</strong>
+              <span>No feed and no noise. Just space for reflection and the people who mattered.</span>
+            </li>
+            <li>
+              <strong>Held in time.</strong>
+              <span>Revisit remembrances whenever you need to, and export the ones you want to keep.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Try Local -->
+        <div class="feature reveal">
+          <div class="feature-body">
+            <span class="badge">Local marketplace</span>
+            <h3>Everything local, one place</h3>
+            <p>
+              Try Local helps Gresham, Oregon discover and support the businesses around them, so more of
+              every dollar stays in the neighborhood instead of going to the chains.
+            </p>
+            <a class="btn btn-primary" href="https://try-local.com" target="_blank" rel="noopener noreferrer">
+              Explore Try Local
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <ul class="feature-pillars">
+            <li>
+              <strong>Discover nearby.</strong>
+              <span>Browse local businesses by category and neighborhood, with hours, reviews, and contact details in one place.</span>
+            </li>
+            <li>
+              <strong>Can't decide?</strong>
+              <span>"Surprise Me" picks a local restaurant for you, with ordering and booking where it's available.</span>
+            </li>
+            <li>
+              <strong>Built for the community.</strong>
+              <span>A directory made to connect neighbors with the shops that make Gresham, Gresham.</span>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
@@ -736,13 +816,15 @@
 
       <div class="footer-cols">
         <div class="footer-col">
-          <h4>Product</h4>
-          <a href="https://rattusking.github.io/Ella-AI-/" target="_blank" rel="noopener noreferrer">Ella AI</a>
-          <a href="#services">Services</a>
+          <h4>Products</h4>
+          <a href="https://rattusking.github.io/Ella-AI-/" target="_blank" rel="noopener noreferrer">Ella</a>
+          <a href="https://rattusking.github.io/MementoTempus/" target="_blank" rel="noopener noreferrer">Memento Tempus</a>
+          <a href="https://try-local.com" target="_blank" rel="noopener noreferrer">Try Local</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <a href="#about">About</a>
+          <a href="#services">Services</a>
           <a href="#contact">Contact</a>
         </div>
         <div class="footer-col">
