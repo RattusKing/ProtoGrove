@@ -7,7 +7,7 @@
   <meta name="keywords" content="ProtoGrove, software studio, Ella, companion app, Memento Tempus, product design, technology" />
   <meta name="author" content="ProtoGrove" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0A0E16" />
+  <meta name="theme-color" content="#14150F" />
   <link rel="canonical" href="https://protogrove.com/" />
 
   <!-- Open Graph / social sharing -->
@@ -21,28 +21,26 @@
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
   /* ---------- Design tokens ---------- */
   :root {
-    --bg:            #0A0E16;
-    --bg-soft:       #0E131F;
-    --surface:       rgba(255, 255, 255, 0.025);
-    --surface-hover: rgba(255, 255, 255, 0.045);
-    --border:        rgba(255, 255, 255, 0.08);
-    --border-strong: rgba(255, 255, 255, 0.14);
+    --bg:            #14150F;   /* warm forest ink */
+    --bg-soft:       #1B1D14;
+    --surface:       rgba(240, 236, 220, 0.035);
+    --surface-hover: rgba(240, 236, 220, 0.06);
+    --border:        rgba(240, 236, 220, 0.10);
+    --border-strong: rgba(240, 236, 220, 0.18);
 
-    --text:          #E7ECF4;
-    --text-muted:    #97A2B4;
-    --text-dim:      #6B7585;
+    --text:          #ECE7D9;   /* warm cream */
+    --text-muted:    #ADA796;
+    --text-dim:      #7C7665;
 
-    --accent:        #2EE6A6;   /* grove green */
-    --accent-soft:   #1FB888;
-    --accent-2:      #4DA8FF;   /* cyan-blue */
-    --accent-glow:   rgba(46, 230, 166, 0.35);
+    --accent:        #A8C686;   /* muted leaf */
+    --accent-deep:   #8FB06A;
 
-    --radius:        16px;
-    --radius-sm:     10px;
+    --radius:        14px;
+    --radius-sm:     8px;
     --maxw:          1120px;
 
     --shadow:        0 1px 2px rgba(0,0,0,0.4), 0 8px 30px rgba(0,0,0,0.35);
@@ -56,41 +54,16 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    line-height: 1.6;
+    font-family: 'Mulish', system-ui, -apple-system, sans-serif;
+    line-height: 1.65;
     min-height: 100vh;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
 
-  /* Ambient background glow */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -2;
-    background:
-      radial-gradient(60rem 40rem at 70% -10%, rgba(77, 168, 255, 0.10), transparent 60%),
-      radial-gradient(50rem 40rem at 10% 0%, rgba(46, 230, 166, 0.10), transparent 55%);
-    pointer-events: none;
-  }
-  /* Subtle grid texture */
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
-    background-size: 56px 56px;
-    mask-image: radial-gradient(circle at 50% 0%, #000 0%, transparent 75%);
-    pointer-events: none;
-  }
-
   a { color: inherit; }
 
-  ::selection { background: rgba(46, 230, 166, 0.28); color: #fff; }
+  ::selection { background: rgba(168, 198, 134, 0.30); color: var(--bg); }
 
   :focus-visible {
     outline: 2px solid var(--accent);
@@ -106,12 +79,12 @@
     top: 0;
     z-index: 100;
     backdrop-filter: blur(12px);
-    background: rgba(10, 14, 22, 0.72);
+    background: rgba(20, 21, 15, 0.75);
     border-bottom: 1px solid var(--border);
     transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   }
   nav.scrolled {
-    background: rgba(10, 14, 22, 0.9);
+    background: rgba(20, 21, 15, 0.92);
     border-bottom-color: var(--border-strong);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
   }
@@ -128,7 +101,7 @@
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Fraunces', Georgia, serif;
     font-weight: 700;
     font-size: 1.2rem;
     letter-spacing: -0.01em;
@@ -151,38 +124,38 @@
   }
   .nav-links a:hover { color: var(--text); }
   .nav-cta {
-    padding: 0.55rem 1.1rem;
-    border-radius: 999px;
-    background: var(--text);
-    color: #0A0E16 !important;
-    font-weight: 600;
-    border: 1px solid transparent;
-    transition: transform 0.15s ease, box-shadow 0.2s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--bg) !important;
+    font-weight: 700;
+    border: 1px solid var(--accent);
+    transition: transform 0.15s ease, background 0.2s ease;
   }
-  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(255,255,255,0.12); }
+  .nav-cta:hover { transform: translateY(-1px); background: var(--accent-deep); border-color: var(--accent-deep); }
 
   /* ---------- Buttons ---------- */
   .btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.85rem 1.5rem;
-    border-radius: 999px;
-    font-weight: 600;
+    padding: 0.8rem 1.4rem;
+    border-radius: 8px;
+    font-weight: 700;
     font-size: 0.97rem;
     text-decoration: none;
     cursor: pointer;
     border: 1px solid transparent;
-    transition: transform 0.15s ease, box-shadow 0.25s ease, background 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
   }
   .btn-primary {
-    background: linear-gradient(135deg, var(--accent), var(--accent-soft));
-    color: #04130D;
-    box-shadow: 0 8px 28px var(--accent-glow);
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
   }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 36px var(--accent-glow); }
+  .btn-primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); transform: translateY(-2px); }
   .btn-ghost {
-    background: var(--surface);
+    background: transparent;
     color: var(--text);
     border-color: var(--border-strong);
   }
@@ -203,42 +176,32 @@
   .hero h1        { animation-delay: 0.15s; }
   .hero p.lead    { animation-delay: 0.28s; }
   .hero-actions   { animation-delay: 0.40s; }
-  .hero .stats    { animation-delay: 0.52s; }
   .eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.4rem 0.9rem;
-    border: 1px solid var(--border-strong);
-    border-radius: 999px;
-    background: var(--surface);
+    gap: 0.55rem;
     color: var(--text-muted);
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    margin-bottom: 1.6rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
   }
   .eyebrow .dot {
-    width: 7px; height: 7px; border-radius: 50%;
+    width: 6px; height: 6px; border-radius: 50%;
     background: var(--accent);
-    box-shadow: 0 0 10px var(--accent);
   }
   h1 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Fraunces', Georgia, serif;
     font-weight: 700;
     font-size: clamp(2.5rem, 6vw, 4.25rem);
-    line-height: 1.05;
-    letter-spacing: -0.03em;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
     color: var(--text);
-    max-width: 16ch;
+    max-width: 18ch;
     margin: 0 auto 1.25rem;
   }
-  h1 .grad {
-    background: linear-gradient(110deg, var(--accent) 10%, var(--accent-2) 90%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  h1 .grad { color: var(--accent); font-style: italic; }
   .hero p.lead {
     font-size: clamp(1.05rem, 2vw, 1.25rem);
     color: var(--text-muted);
@@ -251,25 +214,6 @@
     justify-content: center;
     flex-wrap: wrap;
   }
-
-  /* Stats strip */
-  .stats {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2.5rem 4rem;
-    margin-top: 4rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid var(--border);
-  }
-  .stat { text-align: center; }
-  .stat .num {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--text);
-  }
-  .stat .label { font-size: 0.85rem; color: var(--text-dim); letter-spacing: 0.02em; }
 
   /* ---------- Sections ---------- */
   section { padding: 4.5rem 0; }
@@ -284,11 +228,11 @@
     margin-bottom: 0.75rem;
   }
   h2 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Fraunces', Georgia, serif;
     font-weight: 700;
-    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-    letter-spacing: -0.02em;
-    line-height: 1.1;
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
     margin-bottom: 1rem;
   }
   .section-head p { color: var(--text-muted); font-size: 1.05rem; }
@@ -317,14 +261,14 @@
   .card .icon {
     width: 44px; height: 44px;
     display: grid; place-items: center;
-    border-radius: 12px;
-    background: linear-gradient(135deg, rgba(46,230,166,0.18), rgba(77,168,255,0.18));
-    border: 1px solid var(--border-strong);
+    border-radius: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
     margin-bottom: 1.1rem;
     color: var(--accent);
   }
   .card h3 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Fraunces', Georgia, serif;
     font-size: 1.15rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
@@ -338,39 +282,32 @@
     grid-template-columns: 1.1fr 0.9fr;
     gap: 2.5rem;
     align-items: center;
-    background: linear-gradient(160deg, var(--bg-soft), rgba(14,19,31,0.4));
+    background: var(--bg-soft);
     border: 1px solid var(--border);
-    border-radius: 24px;
+    border-radius: 16px;
     padding: 2.75rem;
     position: relative;
-    overflow: hidden;
-  }
-  .feature::before {
-    content: "";
-    position: absolute;
-    top: -40%; right: -10%;
-    width: 60%; height: 160%;
-    background: radial-gradient(circle, var(--accent-glow), transparent 65%);
-    opacity: 0.5;
-    pointer-events: none;
   }
   .feature-body { position: relative; z-index: 1; }
   .feature .badge {
     display: inline-block;
-    font-size: 0.78rem;
-    font-weight: 600;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
     color: var(--accent);
-    background: rgba(46,230,166,0.1);
-    border: 1px solid rgba(46,230,166,0.25);
-    padding: 0.3rem 0.7rem;
-    border-radius: 999px;
+    background: rgba(168, 198, 134, 0.12);
+    border: 1px solid rgba(168, 198, 134, 0.28);
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
     margin-bottom: 1.1rem;
   }
   .feature h3 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.9rem;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.95rem;
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
     margin-bottom: 0.9rem;
   }
   .feature p { color: var(--text-muted); margin-bottom: 1.1rem; }
@@ -398,22 +335,22 @@
     gap: 1px;
     background: var(--border);
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
   }
   .feature-pillars li {
-    background: var(--bg);
+    background: var(--bg-soft);
     padding: 1.35rem 1.5rem;
     display: grid;
     gap: 0.35rem;
     transition: background 0.2s ease;
   }
-  .feature-pillars li:hover { background: var(--bg-soft); }
+  .feature-pillars li:hover { background: var(--bg); }
   .feature-pillars strong {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.05rem;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.1rem;
     font-weight: 600;
-    color: var(--accent-2);
+    color: var(--accent);
   }
   .feature-pillars span { color: var(--text-muted); font-size: 0.95rem; line-height: 1.55; }
 
@@ -421,7 +358,6 @@
   .feature-stack { display: grid; gap: 1.5rem; }
   .feature-reverse .feature-body { order: 2; }
   .feature-reverse .feature-pillars { order: 1; }
-  .feature-reverse::before { left: -10%; right: auto; }
 
   /* About / values */
   .about-grid {
@@ -441,14 +377,14 @@
     border: 1px solid var(--border);
     color: var(--accent);
   }
-  .value-list strong { display: block; color: var(--text); font-family: 'Space Grotesk', sans-serif; margin-bottom: 0.15rem; }
+  .value-list strong { display: block; color: var(--text); font-family: 'Fraunces', Georgia, serif; margin-bottom: 0.15rem; }
   .value-list span { color: var(--text-muted); font-size: 0.95rem; }
 
   /* ---------- Contact ---------- */
   .contact-card {
-    background: linear-gradient(160deg, var(--bg-soft), rgba(14,19,31,0.3));
+    background: var(--bg-soft);
     border: 1px solid var(--border);
-    border-radius: 24px;
+    border-radius: 16px;
     padding: 2.75rem;
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
@@ -485,7 +421,7 @@
   .contact-form input:focus,
   .contact-form textarea:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(46,230,166,0.15);
+    box-shadow: 0 0 0 3px rgba(168, 198, 134, 0.18);
   }
   .contact-form textarea { resize: vertical; min-height: 130px; }
   .contact-form .btn-primary { justify-content: center; }
@@ -561,9 +497,9 @@
     <div class="nav-inner">
       <a class="brand" href="#top" aria-label="ProtoGrove home">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M12 21V11" stroke="#2EE6A6" stroke-width="2" stroke-linecap="round"/>
-          <path d="M12 13C12 9 9 6.5 5 6.5C5 10.5 8 13 12 13Z" stroke="#2EE6A6" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M12 11C12 7 15 4.5 19 4.5C19 8.5 16 11 12 11Z" stroke="#4DA8FF" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M12 21V11" stroke="#A8C686" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 13C12 9 9 6.5 5 6.5C5 10.5 8 13 12 13Z" stroke="#A8C686" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M12 11C12 7 15 4.5 19 4.5C19 8.5 16 11 12 11Z" stroke="#8FB06A" stroke-width="2" stroke-linejoin="round"/>
         </svg>
         ProtoGrove
       </a>
@@ -591,13 +527,6 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a class="btn btn-ghost" href="#contact">Talk to us</a>
-      </div>
-
-      <div class="stats">
-        <div class="stat"><div class="num">Ella</div><div class="label">Flagship companion</div></div>
-        <div class="stat"><div class="num">Lasting</div><div class="label">Memory that stays</div></div>
-        <div class="stat"><div class="num">Living</div><div class="label">A world of her own</div></div>
-        <div class="stat"><div class="num">24/7</div><div class="label">Always there</div></div>
       </div>
     </header>
 
@@ -777,9 +706,9 @@
       <div class="footer-brand">
         <a class="brand" href="#top" aria-label="ProtoGrove home">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 21V11" stroke="#2EE6A6" stroke-width="2" stroke-linecap="round"/>
-            <path d="M12 13C12 9 9 6.5 5 6.5C5 10.5 8 13 12 13Z" stroke="#2EE6A6" stroke-width="2" stroke-linejoin="round"/>
-            <path d="M12 11C12 7 15 4.5 19 4.5C19 8.5 16 11 12 11Z" stroke="#4DA8FF" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M12 21V11" stroke="#A8C686" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 13C12 9 9 6.5 5 6.5C5 10.5 8 13 12 13Z" stroke="#A8C686" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M12 11C12 7 15 4.5 19 4.5C19 8.5 16 11 12 11Z" stroke="#8FB06A" stroke-width="2" stroke-linejoin="round"/>
           </svg>
           ProtoGrove
         </a>
