@@ -849,9 +849,18 @@
       if (!form) return;
       var status = form.querySelector('.form-status');
       var button = form.querySelector('button[type="submit"]');
+      var gotcha = form.querySelector('[name="_gotcha"]');
+      var loadedAt = Date.now();
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
+
+        // Anti-spam: anything submitted in under 3s is almost certainly a bot.
+        // Trip Formspree's honeypot so the submission is silently discarded.
+        if (gotcha && Date.now() - loadedAt < 3000) {
+          gotcha.value = 'bot';
+        }
+
         status.className = 'form-status';
         status.textContent = 'Sending…';
         button.disabled = true;
