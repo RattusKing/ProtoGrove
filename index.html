@@ -361,6 +361,18 @@
   .feature-reverse .feature-body { order: 2; }
   .feature-reverse .feature-pillars { order: 1; }
 
+  /* Showcase variant: header on top, pillars as a tidy grid (for products with many points) */
+  .feature-showcase { display: block; }
+  .feature-showcase::before { width: 45%; }
+  .feature-showcase .feature-body { margin-bottom: 2rem; max-width: 60ch; }
+  .feature-showcase .feature-pillars { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 900px) {
+    .feature-showcase .feature-pillars { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .feature-showcase .feature-pillars { grid-template-columns: 1fr; }
+  }
+
   /* About / values */
   .about-grid {
     display: grid;
@@ -543,7 +555,7 @@
       <div class="feature-stack">
 
         <!-- Ella -->
-        <div class="feature reveal">
+        <div class="feature feature-showcase reveal">
           <div class="feature-body">
             <span class="badge">Flagship companion</span>
             <h3>A companion with a world of her own</h3>
@@ -612,6 +624,37 @@
             <li>
               <strong>Held in time.</strong>
               <span>Revisit remembrances whenever you need to, and export the ones you want to keep.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Nihonwa -->
+        <div class="feature reveal">
+          <div class="feature-body">
+            <span class="badge">Japanese learning</span>
+            <h3>Fluent Japanese, one step at a time</h3>
+            <p>
+              Nihonwa is a fully immersive way to learn Japanese, carrying you all the way from your
+              very first words to confident fluency.
+            </p>
+            <a class="btn btn-primary" href="https://rattusking.github.io/Nihonwa/" target="_blank" rel="noopener noreferrer">
+              Explore Nihonwa
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <ul class="feature-pillars">
+            <li>
+              <strong>Every level, N5 to N1.</strong>
+              <span>A complete path through all five JLPT levels, from absolute beginner to advanced fluency.</span>
+            </li>
+            <li>
+              <strong>Fully immersive.</strong>
+              <span>Step into Japanese as it is really spoken and written, not just rote drills and grammar tables.</span>
+            </li>
+            <li>
+              <strong>Grow at your pace.</strong>
+              <span>Work through each stage and build real understanding as you climb toward the next.</span>
             </li>
           </ul>
         </div>
@@ -734,6 +777,7 @@
           <h4>Products</h4>
           <a href="https://rattusking.github.io/Ella-AI-/" target="_blank" rel="noopener noreferrer">Ella</a>
           <a href="https://rattusking.github.io/MementoTempus/" target="_blank" rel="noopener noreferrer">Memento Tempus</a>
+          <a href="https://rattusking.github.io/Nihonwa/" target="_blank" rel="noopener noreferrer">Nihonwa</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
